@@ -13,6 +13,8 @@ const { url } = require('./config/database');
 
 mongoose.connect(url, { useNewUrlParser: true });
 
+require('./config/passport')(passport);
+
 //TODO:settings
 app.set('port', process.env.PORT || 80);
 app.set("view", path.join(__dirname,'views'));
@@ -20,15 +22,22 @@ app.set("view engine", "ejs");
 
 //TODO:middlewares
 app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser.urlencode({ extended: false}));
+app.use(session({
+  author:'Jesus Velasquez',
+  resave: false,
+  saveUninitialized:false
+}));
+app.use(passport.initialize);
+app.use(passport.session());
+app.use(flash());
 
 //TODO:routes
-app.get('/', function (req, res) {
-  console.log(url);
-  res.end('hola mundo');
-});
+require('./app/routes')(app,passport);
 
 //TODO:static files
-
+app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(app.get('port'), () => {
   console.log('Server on port', app.get('port'));
