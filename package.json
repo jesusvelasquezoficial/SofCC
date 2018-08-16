@@ -4,6 +4,7 @@
   "description": "SofCC (System of CryptoCurrencies), es una plataforma de gestión y control de trading que se conecta directamente al exchange Binance para mostrar a detalle el estado de las operaciones y estadísticas.",
   "main": "server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/jesusvelasquezoficial/SofCC/issues"
   },
-  "homepage": "https://github.com/jesusvelasquezoficial/SofCC#readme"
+  "homepage": "https://github.com/jesusvelasquezoficial/SofCC#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.2.8",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
 }

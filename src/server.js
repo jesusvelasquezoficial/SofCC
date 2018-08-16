@@ -24,6 +24,7 @@ app.get('/', function (req, res) {
 
 //TODO:static files
 
+
 app.listen(app.get('port'), () => {
-  console.log('server on port', app.get('port'));
+  console.log('Server on port', app.get('port'));
 });
