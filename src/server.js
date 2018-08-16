@@ -11,10 +11,15 @@ const session = require('express-session');
 
 const { url } = require('./config/database');
 
+mongoose.connect(url, { useNewUrlParser: true });
+
 //TODO:settings
 app.set('port', process.env.PORT || 80);
+app.set("view", path.join(__dirname,'views'));
+app.set("view engine", "ejs");
 
 //TODO:middlewares
+app.use(morgan('dev'));
 
 //TODO:routes
 app.get('/', function (req, res) {
