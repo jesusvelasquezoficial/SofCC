@@ -1,0 +1,19 @@
+{
+  "name": "sofcc",
+  "version": "1.0.0",
+  "description": "SofCC (System of CryptoCurrencies), es una plataforma de gestión y control de trading que se conecta directamente al exchange Binance para mostrar a detalle el estado de las operaciones y estadísticas.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusvelasquezoficial/SofCC.git"
+  },
+  "author": "Jesus Velasquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesusvelasquezoficial/SofCC/issues"
+  },
+  "homepage": "https://github.com/jesusvelasquezoficial/SofCC#readme"
+}
