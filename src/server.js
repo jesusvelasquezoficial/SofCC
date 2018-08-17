@@ -13,23 +13,23 @@ const { url } = require('./config/database');
 
 mongoose.connect(url, { useNewUrlParser: true });
 
-require('./config/passport')(passport);
+// require('./config/passport')(passport);
 
 //TODO:settings
 app.set('port', process.env.PORT || 80);
-app.set("view", path.join(__dirname,'views'));
-app.set("view engine", "ejs");
+app.set('views', path.join(__dirname,'views'));
+app.set('view engine', 'ejs');
 
 //TODO:middlewares
 app.use(morgan('dev'));
 app.use(cookieParser());
-app.use(bodyParser.urlencode({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
-  author:'Jesus Velasquez',
-  resave: false,
-  saveUninitialized:false
+  secret:'Login',
+  resave: true,
+  saveUninitialized: true
 }));
-app.use(passport.initialize);
+app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
