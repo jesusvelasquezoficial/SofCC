@@ -13,7 +13,7 @@ const { url } = require('./config/database');
 
 mongoose.connect(url, { useNewUrlParser: true });
 
-// require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 //TODO:settings
 app.set('port', process.env.PORT || 80);
