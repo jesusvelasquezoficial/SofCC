@@ -1,0 +1,100 @@
+body{
+  overflow-x: hidden;
+}
+.sidebar{
+  position: fixed;
+  width: 200px;
+  height: calc(100vh - 3.5rem);
+  left: -200px;
+  top: 3.5rem;
+  transition: all 200ms linear;
+  overflow-y: auto;
+  z-index: 1;
+}
+.sidebar.act{
+  top: 3.5rem;
+  left: 0px;
+}
+
+.sidebar ul li a{
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px;
+  border-top: 1px solid #208afd;
+}
+.sidebar ul li a:hover{
+  color: #000;
+  background-color: rgba(0,0,250,.4);
+}
+.main{
+  width: 100%;
+  height: calc(100vh - 3.5rem);
+  position: absolute;
+  top: 3.5rem;
+  left: 0px;
+  transition: all 200ms linear;
+
+}
+.main.act{
+  left: 200px;
+}
+.btn-m{
+  cursor: pointer;
+  display: block;
+  margin: 0px;
+  padding: .5rem 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.sidebar{
+  flex: 0 1 210px;
+  position: relative;
+  top: 3.5rem;
+  z-index: 1000;
+  height: calc(100vh - 3.5rem);
+  order: 0;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.sidebar .nav{
+  max-height: calc(100vh - 3.5rem);
+  overflow-y: auto;
+  display: block!important;
+  /*padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.sidebar .nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.main{
+  order: 1;
+  display: block!important;
+  top: 3.5rem;
+}
+.navbar-toggler {
+    display: flex !importa;
+}*/
