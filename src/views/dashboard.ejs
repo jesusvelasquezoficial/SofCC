@@ -6,32 +6,34 @@
   <title>Dashboard</title>
   <% include partials/head %>
 </head>
-<body>
-  <div class="container">
-    <header class="text-center">
-      <h1>Dashboard Page</h1>
-      <a href="/logout" class="btn btn-light btn-sm"> Logout</a>
-    </header>
-    <hr>
-    <div class="container">
-      <div class="col-sm-8">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">
-              <span class="fa fa-user"></span> Local
-            </h3>
-            <p>
-              <strong>id</strong>: <%= user._id %> <br>
-              <strong>Nick</strong>: <%= user.local.nickUser %> <br>
-              <strong>Password</strong>: <%= user.local.password %> <br>
-            </p>
-            <a href="/logout" class="btn btn-light">
-               Logout
-            </a>
-          </div>
+<body class="bg-light">
+ <% include partials/menu %>
+  <!-- PRINCIPAL -->
+  <div class="main p-2">
+    <!-- CONTENEDOR -->
+    <div class="container-fluid">
+      <% include partials/indicadoresCMC %>
+      <br>
+      <div class="row">
+        <!-- RIGTH -->
+        <div class="col-md-8 pr-4">
+          <%
+          include partials/chartLine,
+          include partials/WSMH
+          %>
+        </div>
+        <!-- LEFTH -->
+        <div class="col-md-4 pl-4">
+          <% include partials/totalCapInv %>
+          <br>
+          <%
+            include partials/totalNumOfOpe,
+            include partials/tradingOpeGraph
+          %>
         </div>
       </div>
     </div>
   </div>
-</body>
+  <% include partials/scripts %>
+  </body>
 </html>
